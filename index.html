@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Adewole Christianah — Fashion Model</title>
+  <meta name="description" content="Adewole Christianah — runway, editorial and commercial model available for bookings in Lagos, Ibadan and Abeokuta." />
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  
+  <meta property="og:title" content="Adewole Christianah — Fashion Model" />
+  <meta property="og:description" content="Runway, editorial & commercial model — available for bookings in Lagos, Ibadan & Abeokuta." />
+  <meta property="og:image" content="ELAMOR FASHION SHOW-79.JPG" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#F8F8F8; --text:#222; --muted:#B99A6A; --white:#fff;
+      --font-heading: 'Playfair Display', serif; --font-body: 'Lato', sans-serif;
+      --fast: 0.28s ease; --slow: 0.6s ease;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+    .container{width:90%;max-width:1200px;margin:0 auto}
+    a{color:var(--muted);text-decoration:none}
+    img{display:block;max-width:100%;height:auto}
+
+    /* Preloader */
+    #preloader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg);z-index:10000;transition:opacity var(--slow)}
+    .loader-name{font-family:var(--font-heading);font-size:1.6rem;color:var(--muted);opacity:.95;letter-spacing:1px}
+    @media (prefers-reduced-motion:reduce){.loader-name{animation:none}}
+
+    /* Header */
+    #main-header{position:fixed;top:0;left:0;width:100%;z-index:200;background:transparent;padding:18px 0;transition:all var(--fast)}
+    #main-header.scrolled{background:var(--white);box-shadow:0 6px 20px rgba(0,0,0,.06);padding:10px 0}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;width:90%;max-width:1200px;margin:0 auto}
+    .logo{font-family:var(--font-heading);font-size:1.25rem;color:var(--text)}
+    nav{display:flex;gap:26px}
+    nav a{font-size:.85rem;letter-spacing:1px;text-transform:uppercase;color:var(--text);padding:.25rem 0;position:relative}
+    nav a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:100%;background:var(--muted);transform:scaleX(0);transform-origin:left;transition:transform var(--fast)}
+    nav a:hover::after{transform:scaleX(1)}
+    /* Hamburger (mobile) */
+    .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer}
+    .hamburger span{width:22px;height:2px;background:var(--text);display:block}
+
+    /* Hero */
+    .hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;color:var(--white)}
+    .hero-bg{position:absolute;inset:0;background-image:url('./images/ELAMOR FASHION SHOW-79.JPG');background-size:cover;background-position:center;filter:brightness(.55);z-index:0}
+    .hero-inner{position:relative;z-index:2;padding:0 1rem}
+    .hero h1{font-family:var(--font-heading);font-size:5.2rem;line-height:1;margin-bottom:.2rem;color:var(--white);text-shadow:0 6px 18px rgba(0,0,0,.5)}
+    .hero p{font-size:1.05rem;letter-spacing:2px;text-transform:uppercase;margin-top:.6rem;color:var(--white)}
+    .typing-cursor{display:inline-block;margin-left:6px;animation:blink .8s steps(2) infinite}
+    @keyframes blink{50%{opacity:0}}
+    .scroll-down{position:absolute;left:50%;transform:translateX(-50%);bottom:28px;border:2px solid var(--white);width:24px;height:40px;border-radius:20px}
+    .scroll-down::before{content:"";position:absolute;left:50%;top:8px;width:4px;height:8px;background:var(--white);border-radius:2px;transform:translateX(-50%);animation:scroll 2s infinite}
+    @keyframes scroll{0%{transform:translate(-50%,0)}50%{transform:translate(-50%,10px)}100%{transform:translate(-50%,20px);opacity:0}}
+
+    /* Sections */
+    .page-section{padding:100px 0}
+    .section-title{font-family:var(--font-heading);font-size:2.6rem;margin-bottom:1.2rem;color:var(--text)}
+    .content-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+
+    /* About / Stats */
+    .about-image img,.stats-image img,.contact-image img{width:100%;height:100%;object-fit:cover;border-radius:6px;box-shadow:0 18px 40px rgba(0,0,0,.08)}
+    .cta{display:inline-block;background:var(--muted);color:var(--white);padding:.9rem 1.6rem;border-radius:6px;text-transform:uppercase;letter-spacing:1px;transition:transform var(--fast);margin-top:2.5rem}
+    .cta:focus{outline:3px solid rgba(185,154,106,.15)}
+    .cta:hover{transform:translateY(-4px)}
+
+    /* Portfolio grid */
+    .Portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);grid-auto-rows:320px;gap:1.6rem}
+    .Portfolio-item{position:relative;overflow:hidden;border-radius:6px}
+    .Portfolio-item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease,filter .6s ease}
+    .Portfolio-item:hover img{transform:scale(1.06);filter:brightness(.45)}
+    .item-overlay{position:absolute;left:0;bottom:0;width:100%;padding:1.6rem;color:var(--white);transform:translateY(18px);opacity:0;transition:all var(--fast)}
+    .Portfolio-item:hover .item-overlay{transform:translateY(0);opacity:1}
+    .item-overlay h3{font-family:var(--font-heading);font-size:1.15rem;color:var(--muted);margin-bottom:.4rem}
+
+    /* gallery Header */
+    .gallery-header{position:sticky;top:0;z-index:100;background:var(--white);padding:18px 0;box-shadow:0 6px 20px rgba(0,0,0,.06)}
+    .back-to-home-btn{font-size:.85rem;letter-spacing:1px;color:var(--text);transition:color var(--fast)}
+    .back-to-home-btn:hover{color:var(--muted)}
+    .gallery-content{padding:3rem 0}
+
+    /* gallery layout */
+    .gallery-grid{display:grid;grid-template-columns:1fr;gap:1.6rem;width:90%;max-width:1100px;margin:0 auto}
+    .gallery-title{font-family:var(--font-heading);font-size:1.1rem;margin-bottom:.9rem;border-bottom:1px solid #eee;padding-bottom:.6rem}
+
+    /* gallery Masonry Gallery */
+    .masonry-gallery {
+      column-count: 3;
+      column-gap: 1rem;
+    }
+    .masonry-item {
+      margin-bottom: 1rem;
+      display: inline-block;
+      width: 100%;
+      break-inside: avoid;
+    }
+    .masonry-item img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    /* Footer */
+    footer{padding:2rem 0;text-align:center;color:rgba(0,0,0,.5)}
+
+    /* animate on scroll initial */
+    .animate-on-scroll{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+    .animate-on-scroll.is-visible{opacity:1;transform:none}
+
+    /* Responsive */
+    @media (max-width:992px){
+      .hero h1{font-size:3.8rem}
+      .content-grid{grid-template-columns:1fr;gap:2.4rem}
+      .Portfolio-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:260px}
+      .hero p{font-size:1rem}
+      nav{display:none}
+      .hamburger{display:flex}
+      .masonry-gallery { column-count: 2; }
+    }
+    @media (max-width:768px){
+      .hero h1{font-size:2.4rem}
+      .Portfolio-grid{grid-template-columns:1fr;grid-auto-rows:320px}
+      .header-inner{width:95%}
+      .masonry-gallery { column-count: 1; }
+    }
+    @media (prefers-reduced-motion:reduce){
+      .typing-cursor{animation:none}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader" role="status" aria-hidden="false">
+    <div class="loader-name">Adewole Christianah</div>
+  </div>
+
+  <!-- MAIN PAGE -->
+  <div id="main-page-wrapper">
+    <header id="main-header" role="banner">
+      <div class="header-inner">
+        <a class="logo" href="#home">AC</a>
+        <nav role="navigation" aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#Portfolio">Portfolio</a>
+          <a href="#stats">Details</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-inner container">
+          <h1 id="hero-title"><span id="typed-name"></span><span class="typing-cursor" aria-hidden="true">|</span></h1>
+          <p>Runway &amp; Editorial Model</p>
+        </div>
+        <a class="scroll-down" href="#about" aria-label="Scroll to about"></a>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="page-section" id="about">
+        <div class="container content-grid">
+          <div class="about-image animate-on-scroll">
+            <img src="./images/ABOUT.JPG" alt="Adewole Christianah portrait" loading="lazy">
+          </div>
+          <div class="about-text animate-on-scroll">
+            <h2 class="section-title">About Me</h2>
+            <p><b>My name is Adewole Christianah Omowunmi.</b></p>
+            <p>I am a freelance runway and fashion model based in Lagos, Ibadan, and Abeokuta. With a strong commitment to excellence, I have walked for several reputable fashion brands and high-profile events, including Lush Hair and Bare Fashion Evening (The Runway Heist), among others. I also specialize in fashion campaigns and creative visual projects.</p>
+            <p>Beyond modeling, I am a civil engineering student, a leader within my academic community, and a creative who enjoys photography, content creation, and collaborating with fashion-forward brands.</p>
+            <p>Thank you for visiting my space. I look forward to creating something beautiful with you.</p>
+            <!-- <a class="cta" href="#gallery" id="view-gallery">View full gallery</a> -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio -->
+      <section class="page-section" id="Portfolio">
+        <div class="container">
+          <h2 class="section-title text-center animate-on-scroll">Portfolio</h2>
+          <div class="Portfolio-grid">
+            <a class="Portfolio-item animate-on-scroll" href="https://www.instagram.com/p/DLH_-u9Kejk" aria-label="Fashion Editorial - Tullipio's cruise">
+              <img src="./images/Ibadan urban fashion show (1).JPG" alt="Fashion Editorial 1" loading="lazy">
+              <div class="item-overlay"><h3>Fashion & Editorial</h3><p>Ibadan Urban Fashion Week — "Jupilofashion"</p></div>
+            </a>
+            <a class="Portfolio-item animate-on-scroll" href="https://www.instagram.com/p/DNWIb6psNGN" aria-label="Runway - Bare Fashion Evening">
+              <img src="./images/Runway heist.jpeg" alt="Runway Show 1" loading="lazy">
+              <div class="item-overlay"><h3>Runway</h3><p>Bare Fashion Evening ‘25 - The Runway Heist</p></div>
+            </a>
+            <a class="Portfolio-item animate-on-scroll" href="https://www.instagram.com/p/DL8CHfoNP1L" aria-label="Bridal makeover shoot">
+              <img src="./images/Bridal makeover (1).JPG" alt="Editorial 2" loading="lazy">
+              <div class="item-overlay"><h3>Editorial</h3><p>Bridal makeover shoot</p></div>
+            </a>
+            <a class="Portfolio-item animate-on-scroll" href="https://www.instagram.com/reel/DLXrk3RqjYM" aria-label="Lush Hair Stylist Hangout">
+              <img src="./images/Lush hair hangout.PNG" alt="Runway Show 2" loading="lazy">
+              <div class="item-overlay"><h3>Runway</h3><p>Lush Hair Stylist Hangout - Ibadan</p></div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- STATS -->
+      <section class="page-section" id="stats">
+        <div class="container content-grid">
+          <div class="stats-text animate-on-scroll">
+            <h2 class="section-title">Details</h2>
+            <ul class="stats-list" aria-label="Model measurements">
+              <li><strong>Height:</strong> 5’9”</li>
+              <li><strong>Bust:</strong> 32</li>
+              <li><strong>Waist:</strong> 27</li>
+              <li><strong>Hips:</strong> 36</li>
+              <li><strong>Shoe:</strong> 41/42</li>
+              <li><strong>Hair Colour:</strong> Black</li>
+              <li><strong>Eyes Colour:</strong> Brown</li>
+            </ul>
+            <a class="cta" href="#gallery">View gallery</a>
+          </div>
+          <div class="stats-image animate-on-scroll">
+            <img src="./images/Full Length.jpg" alt="Full body model shot" loading="lazy">
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="page-section" id="contact">
+        <div class="container content-grid">
+          <div class="contact-text animate-on-scroll">
+            <h2 class="section-title">Get in touch</h2>
+            <p class="contact-lead">Available for bookings in Lagos, Ibadan, and Abeokuta.</p>
+            <a class="cta" href="mailto:christianahadewole8@gmail.com">christianahadewole8@gmail.com</a>
+            <div style="margin-top:1.2rem;display:flex;gap:1rem;justify-content:flex-start;flex-wrap:wrap">
+              <a href="https://www.instagram.com/christianah_______/" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a href="https://wa.me/2347065451505" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              <a href="https://www.tiktok.com/@christianah__001" target="_blank" rel="noopener noreferrer">TikTok</a>
+            </div>
+          </div>
+          <div class="contact-image animate-on-scroll">
+            <img src="./images/645E31B8-BB64-4E33-B949-4E112F2ABF6B.jpg" alt="Adewole Christianah smiling" loading="lazy">
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer><div class="container"><small>&copy; 2025 Adewole Christianah. All Rights Reserved.</small></div></footer>
+  </div>
+
+  <!-- gallery PAGE -->
+  <div id="gallery-page-wrapper" style="display:none">
+    <header class="gallery-header" role="banner">
+      <div class="header-inner container">
+        <a class="logo" href="#home">AC</a>
+        <a class="back-to-home-btn" href="#" id="back-home">&larr; Back to Home</a>
+      </div>
+    </header>
+
+    <div class="gallery-content">
+      <div class="gallery-grid">
+        <div class="gallery-gallery">
+          <h4 class="gallery-title">Polariods</h4>
+          <div class="masonry-gallery">
+            <div class="masonry-item"><img src="./images/Headshot Close shot.jpg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Headshot left front view.jpg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Half Length front close.jpg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Half Length.jpg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Headshot right side view.jpg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Headshot left side view.jpg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Half Length side view.jpg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Full Length(3).jpg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Headshot right front view.jpg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Half Length Smiling.jpg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Full Length.jpg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Full Length(1).jpg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Full Length(2).jpg" alt="Gallery Image" loading="lazy"></div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-content">
+      <div class="gallery-grid">
+        <div class="gallery-gallery">
+          <h4 class="gallery-title">Gallery</h4>
+          <div class="masonry-gallery shuffle">
+            <div class="masonry-item"><img src="./images/ELAMOR FASHION SHOW-80.JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/IMG_0628.jpg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/IMG_7977.JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/IMG_1117.JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/IMG_7982.JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/ELAMOR FASHION SHOW-79.JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/ELAMOR FASHION SHOW-128.JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Runway heist (2).jpeg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Bridal makeover (1).JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/ABOUT.JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Ibadan Urban fashion show (2).JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Ibadan Urban fashion show.JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Ibadan Urbsn FS backstage.JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/ELAMOR FASHION SHOW IB EDITION.JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Runway Heist back stage init.jpg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Bridal makeover.JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Bridal makeover.PNG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/El amor FS - Lag edition.JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/ELAMOR FASHION SHOW - Lag edition.JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/ELAMOR FASHION SHOW.JPEG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/ELAMOR FASHION SHOW.JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/FUNAAB FASHION SHOW (1).JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/FUNAAB FASHION SHOW (2).JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/FUNAAB FASHION SHOW (3).JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/LUSH HAIR HAIRSTYLIST HANGOUT.jpg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Runway heist (1).jpeg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Runway heist - backstage.jpg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Runway heist.jpeg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Runway Heist on stage.PNG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/645E31B8-BB64-4E33-B949-4E112F2ABF6B.jpg" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/El amor FS - Ibadan edition.JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Ibadan urban fashion show (1).JPG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Lush hair hangout.PNG" alt="Gallery Image" loading="lazy"></div>
+            <div class="masonry-item"><img src="./images/Makeover.PNG" alt="Gallery Image" loading="lazy"></div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <noscript>
+    <style> .animate-on-scroll{opacity:1;transform:none} #preloader{display:none} </style>
+    <div style="padding:12px;background:#fff8e1;color:#333;border-top:4px solid #b99a6a;text-align:center">JavaScript is disabled — some interactive features are limited.</div>
+  </noscript>
+
+  <script>
+    (function(){
+      // Elements
+      const preloader = document.getElementById('preloader');
+      const mainHeader = document.getElementById('main-header');
+      const typedNameEl = document.getElementById('typed-name');
+      const cursorEl = document.querySelector('.typing-cursor');
+      const mobileBtn = document.querySelector('.hamburger');
+      const nav = document.querySelector('nav');
+      const backHome = document.getElementById('back-home');
+      const galleryLink = document.querySelector('a[href="#gallery"]'); // Updated selector
+      const mainWrapper = document.getElementById('main-page-wrapper');
+      const galleryWrapper = document.getElementById('gallery-page-wrapper');
+
+      // Simple mobile nav toggle
+      mobileBtn && mobileBtn.addEventListener('click', () => {
+        const expanded = mobileBtn.getAttribute('aria-expanded') === 'true';
+        mobileBtn.setAttribute('aria-expanded', (!expanded).toString());
+        if(!expanded){ nav.style.display = 'flex'; nav.style.flexDirection = 'column'; nav.style.background = 'var(--white)'; nav.style.position = 'absolute'; nav.style.right = '16px'; nav.style.top = '64px'; nav.style.padding = '12px'; nav.style.boxShadow = '0 8px 30px rgba(0,0,0,.08)' }
+        else { nav.style.display = ''; nav.style.background = ''; nav.style.position = ''; nav.style.padding = ''; nav.style.boxShadow=''}
+      });
+
+      // Preloader => hide on load. Start typing after load.
+      window.addEventListener('load', () => {
+        preloader.style.opacity = '0';
+        preloader.setAttribute('aria-hidden','true');
+        setTimeout(()=> preloader.style.display='none',450);
+        startTypewriter('Adewole Christianah', typedNameEl, cursorEl);
+      });
+
+      // Typewriter (non-blocking)
+      function startTypewriter(text, targetEl, cursorEl){
+        if(!targetEl) return;
+        targetEl.textContent = '';
+        let i = 0;
+        const speed = 90;
+        const tick = () => {
+          if(i < text.length) {
+            targetEl.textContent += text.charAt(i++);
+            setTimeout(tick, speed);
+          } else if(cursorEl){
+            cursorEl.style.opacity = '0';
+          }
+        };
+        setTimeout(tick, 200);
+      }
+
+      // Sticky header on scroll
+      const onScrollHeader = () => {
+        if(window.scrollY > 40) mainHeader.classList.add('scrolled'); else mainHeader.classList.remove('scrolled');
+      };
+      window.addEventListener('scroll', onScrollHeader, {passive:true});
+      onScrollHeader();
+
+      // Smooth anchor scrolling (for in-page links)
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', (e) => {
+          const href = a.getAttribute('href');
+          if(href === '#gallery'){ // show gallery "page"
+            e.preventDefault();
+            showgallery(true);
+            return;
+          }
+          if(href.length>1 && document.querySelector(href)){
+            e.preventDefault();
+            document.querySelector(href).scrollIntoView({behavior:'smooth'});
+          }
+        });
+      });
+
+      // Show/hide gallery view
+      function showgallery(show){
+        if(show){
+          document.body.classList.add('gallery-view');
+          mainWrapper.style.display = 'none';
+          galleryWrapper.style.display = '';
+          window.location.hash = '#gallery';
+          window.scrollTo(0,0);
+        } else {
+          document.body.classList.remove('gallery-view');
+          mainWrapper.style.display = '';
+          galleryWrapper.style.display = 'none';
+          window.location.hash = '';
+        }
+      }
+      // Back to home button
+      backHome && backHome.addEventListener('click', (e)=>{
+        e.preventDefault();
+        showgallery(false);
+      });
+      // If page loaded with #gallery
+      if(window.location.hash === '#gallery') showgallery(true);
+
+      // IntersectionObserver for scroll animations (efficient)
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(en => {
+          if(en.isIntersecting) en.target.classList.add('is-visible');
+        });
+      }, {threshold: 0.15});
+      document.querySelectorAll('.animate-on-scroll').forEach(el => io.observe(el));
+
+      // Accessibility: reduce motion preference handled by CSS
+      // END IIFE
+    })();
+
+
+    
+    // Shuffle only galleries marked with the `shuffle` class (leave polaroids static)
+    document.querySelectorAll('.masonry-gallery.shuffle').forEach(container => {
+      const items = Array.from(container.children);
+      // Shuffle items
+      items.sort(() => Math.random() - 0.5);
+      // Append back in random order
+      items.forEach(item => container.appendChild(item));
+    });
+
+  </script>
+</body>
+</html>
